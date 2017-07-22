@@ -79,8 +79,6 @@ def get_factor_list(org):
 	primes = [2]
 	# 現数初期化
 	n = org
-	# 最大素数
-	pmax = int(math.sqrt(org))
 	# ループ
 	while True:
 		# 最大の素数で割ってみる
@@ -94,7 +92,7 @@ def get_factor_list(org):
 				break
 		else:
 			# 割り切れなかったら次の素数を探す
-			if next_prime(primes, pmax) is None:
+			if next_prime(primes, int(math.sqrt(n))) is None:
 				# 最大素数以下で見つからなければ終了
 				break
 	# 残った現数を因数に加える
